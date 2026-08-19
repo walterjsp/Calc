@@ -1,0 +1,15 @@
+{
+  "name": "calculadora-html-js-ci",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "lint:html": "htmlhint index.html",
+    "check:js": "node --check logic.js && node --check app.js",
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "jest": "^30.0.0"
+  }
+}
