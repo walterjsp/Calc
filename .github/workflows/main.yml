@@ -23,4 +23,22 @@ jobs:
         run: npm install
 
       - name: Validar HTML
-        run: npm run limit.html
+        run: npm run lint:html
+
+      - name: Validar JavaScript
+        run: npm run check:js
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: Preparar artefacto
+        run: npm run build
+
+      - name: Publicar artefacto del build
+        uses: actions/upload-artifact@v7
+        with:
+          name: sitio-web
+          path: dist/
+
+      - name: Despliegue simulado
+        run: echo "Despliegue exitoso - artefacto listo en dist/"
